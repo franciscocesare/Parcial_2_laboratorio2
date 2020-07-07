@@ -21,26 +21,27 @@ namespace Entidades
     [Serializable]
     public class ManejarArchivosClass<T> : IArchivo<T>
     {
+
         public bool Guardar(string archivo, T datos)
         {
             if (!string.IsNullOrEmpty(archivo) && datos != null)
             {
-               // if (File.Exists(file_name))
-
-                {
-
-
-
-                }
                 try
                 {
+
                     string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     string pathCompleto = path + @"\Segundo Parcial Utn\Jardin Utn" + archivo;
-                    using (XmlTextWriter xmlWriter = new XmlTextWriter(pathCompleto, Encoding.ASCII))
+
+                    if (File.Exists(pathCompleto, true))
                     {
-                        XmlSerializer serializer = new XmlSerializer(typeof(T));
-                        serializer.Serialize(xmlWriter, datos);
+
                     }
+
+                        using (XmlTextWriter xmlWriter = new XmlTextWriter(pathCompleto, Encoding.ASCII))
+                        {
+                            XmlSerializer serializer = new XmlSerializer(typeof(T));
+                            serializer.Serialize(xmlWriter, datos);
+                        }
                     return true;
                 }
                 catch (Exception e)
@@ -56,7 +57,7 @@ namespace Entidades
         public bool Leer(string archivo, out T datos)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-             string pathCompleto = path +  @"\Segundo Parcial Utn\Jardin Utn";
+            string pathCompleto = path + @"\Segundo Parcial Utn\Jardin Utn";
 
             datos = default(T);
 
@@ -64,7 +65,7 @@ namespace Entidades
             {                                  //ojo con lo de ver si el archivo existe
                 try
                 {
-                    using (XmlTextReader xmlReader = new XmlTextReader(pathCompleto  + archivo)) //
+                    using (XmlTextReader xmlReader = new XmlTextReader(pathCompleto + archivo)) //
                     {
                         XmlSerializer serializer = new XmlSerializer(typeof(T));
                         datos = (T)serializer.Deserialize(xmlReader);
@@ -126,7 +127,7 @@ namespace Entidades
 
                 catch (SerializationException e)
                 {
-                   throw new Exception(e.Message);
+                    throw new Exception(e.Message);
                 }
             }
             return false;

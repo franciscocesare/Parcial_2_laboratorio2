@@ -17,9 +17,6 @@ namespace Entidades
     public static class GuardarString  ///EXTENSION DE STRING, POR ESO EL THIS EN LOS PARAMETROS
     {
 
-        //ASI LO IMPLEMENTO, en el TP4   GuardarString.Guardar(elemento.MostrarDatos(elemento), "salida.txt");
-        //ASI QUE VER DEL TP, ELEMENTO Y MOSTRAR DATOS A VER SI ME SIRVEN LOS DE DOCENTE
-
         public static bool GuardarTexto(this string texto, string archivo)
         {
             bool aux = false;
