@@ -4,3 +4,9 @@ C:\Users\Usuario\Desktop\segundo Parcial Cesare 2D\Cesare.Francisco.2D\Excepcion
 C:\Users\Usuario\Desktop\segundo Parcial Cesare 2D\Cesare.Francisco.2D\Excepciones\obj\Debug\Excepciones.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\segundo Parcial Cesare 2D\Cesare.Francisco.2D\Excepciones\obj\Debug\Excepciones.dll
 C:\Users\Usuario\Desktop\segundo Parcial Cesare 2D\Cesare.Francisco.2D\Excepciones\obj\Debug\Excepciones.pdb
+C:\Users\Usuario\Desktop\segundo Parcial Cesare 2D\Parcial_2_laboratorio2\Cesare.Francisco.2D\Excepciones\bin\Debug\Excepciones.dll
+C:\Users\Usuario\Desktop\segundo Parcial Cesare 2D\Parcial_2_laboratorio2\Cesare.Francisco.2D\Excepciones\bin\Debug\Excepciones.pdb
+C:\Users\Usuario\Desktop\segundo Parcial Cesare 2D\Parcial_2_laboratorio2\Cesare.Francisco.2D\Excepciones\obj\Debug\Excepciones.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\segundo Parcial Cesare 2D\Parcial_2_laboratorio2\Cesare.Francisco.2D\Excepciones\obj\Debug\Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\segundo Parcial Cesare 2D\Parcial_2_laboratorio2\Cesare.Francisco.2D\Excepciones\obj\Debug\Excepciones.dll
+C:\Users\Usuario\Desktop\segundo Parcial Cesare 2D\Parcial_2_laboratorio2\Cesare.Francisco.2D\Excepciones\obj\Debug\Excepciones.pdb
