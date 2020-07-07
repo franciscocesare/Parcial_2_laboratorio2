@@ -46,6 +46,7 @@
             // btnComenzar
             // 
             this.btnComenzar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnComenzar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnComenzar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComenzar.ImageKey = "(ninguno)";
             this.btnComenzar.Location = new System.Drawing.Point(338, 220);
@@ -67,10 +68,10 @@
             // lblTiempoEvaluando
             // 
             this.lblTiempoEvaluando.AutoSize = true;
-            this.lblTiempoEvaluando.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempoEvaluando.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiempoEvaluando.Location = new System.Drawing.Point(337, 314);
             this.lblTiempoEvaluando.Name = "lblTiempoEvaluando";
-            this.lblTiempoEvaluando.Size = new System.Drawing.Size(0, 24);
+            this.lblTiempoEvaluando.Size = new System.Drawing.Size(0, 37);
             this.lblTiempoEvaluando.TabIndex = 3;
             // 
             // timerEvaluaciones
@@ -81,17 +82,17 @@
             // lblAlumnosSinEvaluar
             // 
             this.lblAlumnosSinEvaluar.AutoSize = true;
-            this.lblAlumnosSinEvaluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlumnosSinEvaluar.Location = new System.Drawing.Point(2, 38);
+            this.lblAlumnosSinEvaluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlumnosSinEvaluar.Location = new System.Drawing.Point(3, 20);
             this.lblAlumnosSinEvaluar.Name = "lblAlumnosSinEvaluar";
-            this.lblAlumnosSinEvaluar.Size = new System.Drawing.Size(184, 13);
+            this.lblAlumnosSinEvaluar.Size = new System.Drawing.Size(261, 20);
             this.lblAlumnosSinEvaluar.TabIndex = 4;
             this.lblAlumnosSinEvaluar.Text = "Alumnos  Random para Evaluar";
             // 
             // listBoxAlumnos
             // 
             this.listBoxAlumnos.FormattingEnabled = true;
-            this.listBoxAlumnos.Location = new System.Drawing.Point(27, 54);
+            this.listBoxAlumnos.Location = new System.Drawing.Point(40, 53);
             this.listBoxAlumnos.Name = "listBoxAlumnos";
             this.listBoxAlumnos.Size = new System.Drawing.Size(138, 368);
             this.listBoxAlumnos.TabIndex = 0;
@@ -134,7 +135,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(325, 294);
+            this.label2.Location = new System.Drawing.Point(329, 294);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 17);
             this.label2.TabIndex = 7;

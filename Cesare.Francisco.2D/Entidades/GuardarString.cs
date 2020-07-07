@@ -8,28 +8,54 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    public static class GuardarString 
+    { 
 
-    /*
-      Nota: La aplicación deberá poder levantar siempre los archivos del siguiente 
-      path: “MisDocumentos/SegundoParcialUtn/JardinUtn/Docentes/”.
-
-     */
-    public static class GuardarString  ///EXTENSION DE STRING, POR ESO EL THIS EN LOS PARAMETROS
-    {
-
-        public static bool GuardarTexto(this string texto, string archivo)
+        public static  bool Guardar(string archivo, string datos)
         {
             bool aux = false;
-            if (!string.IsNullOrEmpty(archivo) && !string.IsNullOrEmpty(texto))
+            if (!string.IsNullOrEmpty(archivo) && !string.IsNullOrEmpty(datos))
             {
                 try
                 {
-                    string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);  /////ver lo de my documents
-                    using (StreamWriter sw = new StreamWriter(Path.Combine(path, archivo),true))
+                    string path = AppDomain.CurrentDomain.BaseDirectory;
+                    using (StreamWriter sw = new StreamWriter(Path.Combine(path, archivo)))
                     {
-                        sw.WriteLine(texto);
+                        sw.WriteLine(datos);
                         aux = true;
                     }
+
+                }
+                catch (Exception e)
+                {
+                    throw new ArchivosException(e);
+                }
+            }
+
+            return aux;
+        }
+
+        /// <summary>
+        /// Lee datos del path pasdao
+        /// </summary>
+        /// <param name="archivo">Nombre del archivo</param>
+        /// <param name="datos">Donde se guarda la informacion del archivo</param>
+        /// <returns>Devuelve la info del archivo o vacio si no pudo</returns>
+        public static bool Leer(string archivo, out string datos)
+        {
+            bool aux = false;
+            datos = "";
+            if (!string.IsNullOrEmpty(archivo))
+            {
+                try
+                {
+                    string path = AppDomain.CurrentDomain.BaseDirectory;
+                    using (StreamReader sw = new StreamReader(Path.Combine(path, archivo)))
+                    {
+                        datos = sw.ReadToEnd();
+                        aux = true;
+                    }
+                    //sw.Close();
                 }
                 catch (Exception e)
                 {
@@ -39,6 +65,7 @@ namespace Entidades
             return aux;
         }
 
-
     }
+
+   
 }

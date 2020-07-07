@@ -73,6 +73,7 @@ namespace Entidades
                 }
                 catch (SinDniExcepcion ex) //EX la instancia de la excepcion que me fallo
                 {
+                    GuardarString.Guardar("LOGS Errores.txt", ex.Message.ToString());
                     throw new SinDniExcepcion("te dije que era invalido", ex);
                 }
             }

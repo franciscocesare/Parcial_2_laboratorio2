@@ -32,21 +32,26 @@ namespace Entidades
                     string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     string pathCompleto = path + @"\Segundo Parcial Utn\Jardin Utn" + archivo;
 
-                    if (File.Exists(pathCompleto, true))
-                    {
-
-                    }
-
+                 //   if (File.Exists(pathCompleto))
+                 //   {
+                  //        GuardarString.Guardar("LOGSErrores.txt", archivo);
+                //    }
+                  //  else
+                  //  {
                         using (XmlTextWriter xmlWriter = new XmlTextWriter(pathCompleto, Encoding.ASCII))
                         {
                             XmlSerializer serializer = new XmlSerializer(typeof(T));
                             serializer.Serialize(xmlWriter, datos);
                         }
+
+                  //  }
+
                     return true;
                 }
                 catch (Exception e)
                 {
-
+                  
+                    GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
                     throw new ArchivosException(e);
                 }
             }
@@ -74,6 +79,7 @@ namespace Entidades
                 }
                 catch (Exception e)
                 {
+                    GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
                     throw new ArchivosException(e);
                 }
             }
@@ -100,7 +106,7 @@ namespace Entidades
                 }
                 catch (SerializationException e)
                 {
-
+                    GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
                     throw new Exception(e.Message);
 
                 }
@@ -127,6 +133,7 @@ namespace Entidades
 
                 catch (SerializationException e)
                 {
+                    GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
                     throw new Exception(e.Message);
                 }
             }

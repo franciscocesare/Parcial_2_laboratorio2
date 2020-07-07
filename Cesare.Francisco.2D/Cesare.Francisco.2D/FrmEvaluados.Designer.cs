@@ -33,6 +33,7 @@
             this.listBoxRecreo = new System.Windows.Forms.ListBox();
             this.DuracionRecreo = new System.Windows.Forms.Timer(this.components);
             this.lblRecreo = new System.Windows.Forms.Label();
+            this.lblTiempoRecreo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxRecreo
@@ -56,7 +57,16 @@
             this.lblRecreo.Name = "lblRecreo";
             this.lblRecreo.Size = new System.Drawing.Size(617, 32);
             this.lblRecreo.TabIndex = 1;
-            this.lblRecreo.Text = "Recreo para los que rindieron,a disfrutar";
+            this.lblRecreo.Text = "Tenemos 5\" de Recreo los Evaluados";
+            // 
+            // lblTiempoRecreo
+            // 
+            this.lblTiempoRecreo.AutoSize = true;
+            this.lblTiempoRecreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempoRecreo.Location = new System.Drawing.Point(165, 64);
+            this.lblTiempoRecreo.Name = "lblTiempoRecreo";
+            this.lblTiempoRecreo.Size = new System.Drawing.Size(0, 73);
+            this.lblTiempoRecreo.TabIndex = 2;
             // 
             // FrmEvaluados
             // 
@@ -67,6 +77,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(611, 528);
             this.ControlBox = false;
+            this.Controls.Add(this.lblTiempoRecreo);
             this.Controls.Add(this.lblRecreo);
             this.Controls.Add(this.listBoxRecreo);
             this.DoubleBuffered = true;
@@ -80,6 +91,7 @@
             this.Text = "Patio de Recreos";
             this.Load += new System.EventHandler(this.FrmEvaluados_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,5 +99,6 @@
         private System.Windows.Forms.ListBox listBoxRecreo;
         private System.Windows.Forms.Timer DuracionRecreo;
         private System.Windows.Forms.Label lblRecreo;
+        private System.Windows.Forms.Label lblTiempoRecreo;
     }
 }

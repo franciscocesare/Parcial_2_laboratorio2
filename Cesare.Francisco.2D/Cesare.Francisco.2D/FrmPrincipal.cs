@@ -22,8 +22,7 @@ namespace Cesare.Francisco._2D
         int ciclos = 0;
         int min = 0;
         int tiempoEvaluacion = 0;
-        const int RINDIENDO = 1000; /// 3 segundos, despues pasar a 8
-
+        const int RINDIENDO = 3000; //tiempo evaluando
         SqlConnection miConexion;
 
         List<Thread> hilos;
@@ -209,7 +208,7 @@ namespace Cesare.Francisco._2D
             }
             catch (Exception e)
             {
-
+                GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
                 throw new Exception(e.Message);
             }
 

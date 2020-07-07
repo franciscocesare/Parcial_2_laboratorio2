@@ -37,10 +37,12 @@ namespace Entidades
             }
             catch (NullReferenceException e)
             {
+                GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
                 throw e;
             }
             catch (Exception e)
             {
+                GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
                 throw e;
             }
             finally
@@ -74,7 +76,7 @@ namespace Entidades
             }
             catch (Exception ex)
             {
-
+                GuardarString.Guardar("LOGS Errores.txt", ex.Message.ToString());
                 throw new ArchivosException(ex.Message); // MessageBox.Show(ex.Message);
             }
 
@@ -117,10 +119,12 @@ namespace Entidades
 
             catch (NullReferenceException e)
             {
+                GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
                 throw e;
             }
             catch (System.Exception e)
             {
+                GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
                 throw e;
             }
             finally

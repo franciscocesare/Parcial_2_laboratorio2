@@ -52,7 +52,7 @@ namespace Cesare.Francisco._2D
             }
             catch (Exception e)
             {
-
+                GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
                 throw new Exception(e.Message);
             }
 
@@ -61,6 +61,7 @@ namespace Cesare.Francisco._2D
 
         private void DuracionRecreo_Tick(object sender, EventArgs e)
         {
+           
 
             if (tiempoRecreo == 5)
             {
@@ -68,11 +69,13 @@ namespace Cesare.Francisco._2D
                 this.Hide(); ///si paso el recreo cierro el form?
             }
             tiempoRecreo ++;
+            lblTiempoRecreo.Text = tiempoRecreo.ToString();
+
         }
 
         private void FrmEvaluados_Load(object sender, EventArgs e)
         {
-
+            
             MostrarRecreo();
             lblRecreo.Visible = true;
         }
