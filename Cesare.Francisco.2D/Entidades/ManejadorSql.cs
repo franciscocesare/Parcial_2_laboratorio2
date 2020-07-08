@@ -43,7 +43,7 @@ namespace Entidades
             catch (Exception e)
             {
                 GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
-                throw e;
+                throw e.InnerException;
             }
             finally
             {
@@ -77,7 +77,7 @@ namespace Entidades
             catch (Exception ex)
             {
                 GuardarString.Guardar("LOGS Errores.txt", ex.Message.ToString());
-                throw new ArchivosException(ex.Message); // MessageBox.Show(ex.Message);
+                throw new ArchivosException(ex.Message);
             }
 
             finally
@@ -117,15 +117,10 @@ namespace Entidades
                 dataReader = command.ExecuteReader(); //carga la tabla con lo que leyo         
             }
 
-            catch (NullReferenceException e)
+            catch (Exception e)
             {
                 GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
-                throw e;
-            }
-            catch (System.Exception e)
-            {
-                GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
-                throw e;
+                throw e.InnerException;
             }
             finally
             {

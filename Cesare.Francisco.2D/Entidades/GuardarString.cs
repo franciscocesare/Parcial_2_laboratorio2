@@ -9,9 +9,14 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     public static class GuardarString 
-    { 
-
-        public static  bool Guardar(string archivo, string datos)
+    {
+        /// <summary>
+        /// Lee datos del path pasdao
+        /// </summary>
+        /// <param name="archivo">Nombre del archivo</param>
+        /// <param name="datos">Donde se guarda la informacion del archivo</param>
+        /// <returns>Devuelve la info del archivo o vacio si no pudo</returns>
+        public static bool Guardar(string archivo, string datos)
         {
             bool aux = false;
             if (!string.IsNullOrEmpty(archivo) && !string.IsNullOrEmpty(datos))
@@ -28,7 +33,7 @@ namespace Entidades
                 }
                 catch (Exception e)
                 {
-                    throw new ArchivosException(e);
+                    throw new ArchivosException(e.Message);
                 }
             }
 
@@ -59,7 +64,7 @@ namespace Entidades
                 }
                 catch (Exception e)
                 {
-                    throw new ArchivosException(e);
+                    throw new ArchivosException(e.Message);
                 }
             }
             return aux;

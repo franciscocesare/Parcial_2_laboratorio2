@@ -10,14 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Entidades
 {
-    /*
-     * a. Al momento de serializar o de escribir el archivo (es decir, cuando creemos files), deberán verificar si la ruta existe. 
-     * De no existir,crearla la ruta, grabar el file y al finalizar, lanzar una excepción personalizada que grabe en el .txt de logs, 
-     * la creación de la ruta por no existir.
-      Nota: La aplicación deberá poder levantar siempre los archivos del siguiente 
-      path: “MisDocumentos/SegundoParcialUtn/JardinUtn/Docentes/”.
-
-     */
+   
     [Serializable]
     public class ManejarArchivosClass<T> : IArchivo<T>
     {
@@ -51,8 +44,8 @@ namespace Entidades
                 catch (Exception e)
                 {
                   
-                    GuardarString.Guardar("LOGS Errores.txt", e.Message.ToString());
-                    throw new ArchivosException(e);
+                    GuardarString.Guardar("LOGSErrores.txt", e.Message.ToString());
+                    throw new ArchivosException(e.Message);
                 }
             }
             return false;

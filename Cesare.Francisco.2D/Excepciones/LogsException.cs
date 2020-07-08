@@ -14,7 +14,7 @@ namespace Excepciones
         {
         }
 
-        public LogsException(string message) : base(message)
+        public LogsException(string message) : base("Error pipi")
         {
 
         }

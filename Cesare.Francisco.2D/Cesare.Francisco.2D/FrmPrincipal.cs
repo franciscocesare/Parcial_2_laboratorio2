@@ -73,6 +73,7 @@ namespace Cesare.Francisco._2D
                 CargarAulasDeBase<Aula>(Aulas, miConexion);
                 this.CargarListaAlumnos();
                 LeerDocentesXml();
+                CargarDocentesEnBase<Docente>(Docentes, miConexion);
 
             }
         }
@@ -150,7 +151,7 @@ namespace Cesare.Francisco._2D
         /// Levanta de un XML una coleccion de Docentes y los guarda en Lista en memoria
         /// </summary>
         /// <returns></returns>
-        public bool LeerDocentesXml()  ////deserealiza el archivo, se supone que todos por que es GENERIC
+        public bool LeerDocentesXml() 
         {
             ManejarArchivosClass<List<Docente>> xml = new ManejarArchivosClass<List<Docente>>();
 
@@ -165,27 +166,26 @@ namespace Cesare.Francisco._2D
         /// Guarda el alumno desaprobado en XML a traves del metodo xmlGuardar
         /// </summary>
         /// <param name="alumno"></param>
-        public void GuardarDesaprobados(Alumno alumno)  ////DEPENDE QUIEN DISPARA EL EVENTO ES A CUAL LLAMA
+        public void GuardarDesaprobados(Alumno alumno)  
         {
             DateTime fecha = DateTime.Now;
             ManejarArchivosClass<Alumno> xml = new ManejarArchivosClass<Alumno>();
-            xml.Guardar($"\\Serializaciones\\Desaprobados\\{alumno.Apellido}_{alumno.Nombre}_{fecha.ToString("dd_MM_yyyy")}.xml", alumno); ///LE ASO la lsita de los ya evaluados 
+            xml.Guardar($"\\Serializaciones\\Desaprobados\\{alumno.Apellido}_{alumno.Nombre}_{fecha.ToString("dd_MM_yyyy")}.xml", alumno);  
         }
 
         /// <summary>
         /// Guarda el alumno aprobado en XML a traves del metodo xmlGuardar
         /// </summary>
         /// <param name="alumno"></param> un alumno evaluado
-        public void GuardarAprobados(Alumno alumno)  /////ESTO tengo que ver guardar que v a a ser
+        public void GuardarAprobados(Alumno alumno) 
         {
-
 
             DateTime fecha = DateTime.Now;
             ManejarArchivosClass<Alumno> xml = new ManejarArchivosClass<Alumno>();
             xml.Guardar($"\\Serializaciones\\Aprobados\\{ alumno.Apellido}_{alumno.Nombre}_{fecha.ToString("dd_MM_yyyy")}.xml", alumno);
 
-
         }
+
 
         /// <summary>
         /// /llena el ListBox con los alumnos en Lista
@@ -249,8 +249,6 @@ namespace Cesare.Francisco._2D
             }
         }
 
-
-
         /// <summary>
         /// Da inicio a la evaluaciones, timer e hilos
         /// </summary>
@@ -299,7 +297,7 @@ namespace Cesare.Francisco._2D
             }
 
         }
-        //EN EL DE EZE ES MOSTRAR SEGUNDO
+        
 
         /// <summary>
         /// Cronometro en form principal. Dispara evento al recreo

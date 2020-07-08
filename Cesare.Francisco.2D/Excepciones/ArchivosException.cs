@@ -10,7 +10,7 @@ namespace Excepciones
     public class ArchivosException : Exception
     {
 
-        public ArchivosException(Exception innerException) : base("Ocurrio un error con el archivo.") { }
+        public ArchivosException(Exception innerException) : base("Ocurrio un error con el archivo") { }
         
         public ArchivosException(string mensaje) : base(mensaje)
         {
